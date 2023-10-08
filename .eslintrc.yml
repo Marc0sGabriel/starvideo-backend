@@ -5,4 +5,10 @@ env:
 extends: google
 parserOptions:
   ecmaVersion: latest
-rules: { new-cap: off, object-curly-spacing: off, require-jsdoc: off }
+rules:
+  {
+    new-cap: off,
+    object-curly-spacing: off,
+    require-jsdoc: off,
+    comma-dangle: off,
+  }
