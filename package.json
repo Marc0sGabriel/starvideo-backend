@@ -1,0 +1,27 @@
+{
+  "name": "starvideo-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node --watch src/app.js",
+    "lint": "eslint --fix --ext .js,.ts src",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Marcos Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.4.0",
+    "@fastify/postgres": "^5.2.0",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.23.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^29.7.0",
+    "prettier": "3.0.3"
+  }
+}

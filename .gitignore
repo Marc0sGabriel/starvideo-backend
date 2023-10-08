@@ -1,0 +1,17 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+
+.env
+.env.local
+.env.*.local
+
+*.swp
+*.bak
+*.tmp
+*.cache
+
+*.js.map
+*.js.map.gz
+
+.cache/

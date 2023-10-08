@@ -1,0 +1,8 @@
+env:
+  commonjs: true
+  es2021: true
+  node: true
+extends: google
+parserOptions:
+  ecmaVersion: latest
+rules: { new-cap: off, object-curly-spacing: off, require-jsdoc: off }
