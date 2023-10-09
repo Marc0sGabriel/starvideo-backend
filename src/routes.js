@@ -1,9 +1,7 @@
-const movies = require('./fake-data/movies');
+const MoviesController = require('./controllers/MoviesController');
 
 function routes(server, options, done) {
-  server.get('/movies', (request, reply) => {
-    reply.send(movies);
-  });
+  server.get('/movies', MoviesController.show);
 
   done();
 }
