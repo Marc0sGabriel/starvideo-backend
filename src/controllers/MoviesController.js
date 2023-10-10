@@ -43,7 +43,7 @@ class MoviesController {
       reply.code(400).send({ error: 'Movie or TV Show already exists!' });
     }
 
-    await MoviesRepository.create({
+    const createdContent = await MoviesRepository.create({
       id,
       title,
       category,
@@ -52,7 +52,7 @@ class MoviesController {
       imageCover,
     });
 
-    return reply.code(201).send();
+    return reply.code(201).send(createdContent);
   }
 
   async update(request, reply) {

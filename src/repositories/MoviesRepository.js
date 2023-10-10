@@ -20,14 +20,8 @@ class MovieRepository {
   }
 
   create({ id, title, category, genre, videoID, imageCover }) {
-    const newContent = movies.push({
-      id,
-      title,
-      category,
-      genre,
-      videoID,
-      imageCover,
-    });
+    const newContent = { id, title, category, genre, videoID, imageCover };
+    movies.push(newContent);
 
     return newContent;
   }
