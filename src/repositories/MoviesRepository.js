@@ -18,6 +18,19 @@ class MovieRepository {
 
     return getByTitle;
   }
+
+  create({ id, title, category, genre, videoID, imageCover }) {
+    const newContent = movies.push({
+      id,
+      title,
+      category,
+      genre,
+      videoID,
+      imageCover,
+    });
+
+    return newContent;
+  }
 }
 
 module.exports = new MovieRepository();
