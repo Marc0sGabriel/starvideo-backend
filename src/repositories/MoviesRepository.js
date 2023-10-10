@@ -31,6 +31,18 @@ class MovieRepository {
 
     return newContent;
   }
+
+  update({ id, title, category, genre, videoID, imageCover }) {
+    const movie = movies.find((data) => data.id === id);
+    Object.assign(movie, {
+      id,
+      title,
+      category,
+      genre,
+      videoID,
+      imageCover,
+    });
+  }
 }
 
 module.exports = new MovieRepository();
