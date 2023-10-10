@@ -76,6 +76,19 @@ class MoviesController {
 
     return reply.code(200).send();
   }
+
+  async delete(request, reply) {
+    const { id } = request.params;
+    const existContent = MoviesRepository.findByID(id);
+
+    await MoviesRepository.delete({ id });
+
+    if (!existContent) {
+      return reply.code(404).send({ error: 'Movie or TV Show not exists!' });
+    }
+
+    return reply.code(200).send();
+  }
 }
 
 module.exports = new MoviesController();
