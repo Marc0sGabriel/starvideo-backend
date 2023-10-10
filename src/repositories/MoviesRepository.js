@@ -37,6 +37,14 @@ class MovieRepository {
       imageCover,
     });
   }
+
+  delete({ id }) {
+    const removeContent = movies.findIndex((data) => data.id == id);
+
+    if (removeContent > -1) {
+      movies.splice(removeContent, 1);
+    }
+  }
 }
 
 module.exports = new MovieRepository();
