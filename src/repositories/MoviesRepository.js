@@ -12,6 +12,12 @@ class MovieRepository {
 
     return getByID;
   }
+
+  findByTitle(title) {
+    const getByTitle = movies.find((data) => data.title === title);
+
+    return getByTitle;
+  }
 }
 
 module.exports = new MovieRepository();
