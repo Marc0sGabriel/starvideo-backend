@@ -20,9 +20,29 @@ class MovieRepository {
     return getByTitle;
   }
 
-  create({ id, title, category, genre, videoID, imageCover }) {
-    const newContent = { id, title, category, genre, videoID, imageCover };
-    movies.push(newContent);
+  create({
+    title,
+    category,
+    genre,
+    videoID,
+    imageCover,
+    seasons,
+    publishedAt,
+  }) {
+    const newContent = db.query(
+      `INSERT INTO movies(
+        title,
+        category,
+        genre,
+        videoID,
+        imageCover,
+        seasons,
+        publishedAt
+      )
+       VALUES($1, $2, $3, $4, $5, $6, $7)
+      `,
+      [title, category, genre, videoID, imageCover, seasons, publishedAt]
+    );
 
     return newContent;
   }
