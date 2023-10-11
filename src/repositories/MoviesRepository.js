@@ -1,8 +1,9 @@
 const movies = require('../fake-data/movies');
 const db = require('../database');
+
 class MovieRepository {
   index() {
-    const getAllContent = movies.map((data) => data);
+    const getAllContent = db.query('SELECT * FROM movies');
 
     return getAllContent;
   }
