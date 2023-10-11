@@ -11,4 +11,5 @@ rules:
     object-curly-spacing: off,
     require-jsdoc: off,
     comma-dangle: off,
+    indent: off,
   }
