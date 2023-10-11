@@ -80,11 +80,8 @@ class MovieRepository {
   }
 
   delete({ id }) {
-    const removeContent = movies.findIndex((data) => data.id == id);
-
-    if (removeContent > -1) {
-      movies.splice(removeContent, 1);
-    }
+    const removeContent = db.query(`DELETE FROM movies WHERE id = $1`, [id]);
+    return removeContent;
   }
 }
 
