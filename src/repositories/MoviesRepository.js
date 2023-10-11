@@ -40,7 +40,7 @@ class MovieRepository {
   }
 
   delete({ id }) {
-    const removeContent = db.query(`DELETE * FROM movies WHERE id = $1`, [id]);
+    const removeContent = db.query(`DELETE FROM movies WHERE id = $1`, [id]);
     return removeContent;
   }
 }
