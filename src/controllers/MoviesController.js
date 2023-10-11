@@ -1,5 +1,4 @@
 const MoviesRepository = require('../repositories/MoviesRepository');
-const { randomUUID } = require('node:crypto');
 
 class MoviesController {
   async show(request, reply) {
@@ -21,8 +20,15 @@ class MoviesController {
   }
 
   async store(request, reply) {
-    const { title, category, genre, videoID, imageCover } = request.body;
-    const id = randomUUID();
+    const {
+      title,
+      category,
+      genre,
+      videoID,
+      imageCover,
+      seasons,
+      publishedAt,
+    } = request.body;
 
     const isAlreadyExistsMovie = MoviesRepository.findByTitle(title);
     const requiredFields = [
@@ -44,12 +50,13 @@ class MoviesController {
     }
 
     const createdContent = await MoviesRepository.create({
-      id,
       title,
       category,
       genre,
       videoID,
       imageCover,
+      seasons,
+      publishedAt,
     });
 
     return reply.code(201).send(createdContent);
