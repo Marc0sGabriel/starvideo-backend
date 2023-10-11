@@ -1,4 +1,5 @@
 const movies = require('../fake-data/movies');
+const db = require('../database');
 
 class MovieRepository {
   index() {
@@ -14,7 +15,9 @@ class MovieRepository {
   }
 
   findByTitle(title) {
-    const getByTitle = movies.find((data) => data.title === title);
+    const getByTitle = db.query(`SELECT title FROM movies WHERE title = $1`, [
+      title,
+    ]);
 
     return getByTitle;
   }
