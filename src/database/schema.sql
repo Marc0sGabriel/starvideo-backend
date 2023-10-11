@@ -1,0 +1,14 @@
+CREATE DATABASE starvideo;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS movies(
+  id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4(),
+  title VARCHAR NOT NULL UNIQUE,
+  category VARCHAR NOT NULL,
+  genre  VARCHAR NOT NULL,
+  videoID VARCHAR NOT NULL,
+  imageCover VARCHAR NOT NULL,
+  publishedAt VARCHAR,
+  seasons VARCHAR,
+);
