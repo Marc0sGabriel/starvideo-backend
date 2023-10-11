@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS movies(
   videoID VARCHAR NOT NULL,
   imageCover VARCHAR NOT NULL,
   publishedAt VARCHAR,
-  seasons VARCHAR,
+  seasons VARCHAR
 );
