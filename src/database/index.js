@@ -1,5 +1,5 @@
-require('dotenv');
 const { Client } = require('pg');
+require('dotenv').config();
 
 const client = new Client({
   port: process.env.PORT,
