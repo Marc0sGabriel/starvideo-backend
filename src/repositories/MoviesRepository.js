@@ -1,4 +1,3 @@
-const movies = require('../fake-data/movies');
 const db = require('../database');
 
 class MovieRepository {
