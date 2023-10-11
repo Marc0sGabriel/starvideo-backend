@@ -49,16 +49,34 @@ class MovieRepository {
     return newContent;
   }
 
-  update({ id, title, category, genre, videoID, imageCover }) {
-    const movie = movies.find((data) => data.id === id);
-    Object.assign(movie, {
-      id,
-      title,
-      category,
-      genre,
-      videoID,
-      imageCover,
-    });
+  update({
+    id,
+    title,
+    category,
+    genre,
+    videoID,
+    imageCover,
+    publishedAt,
+    seasons,
+  }) {
+    const movie = db.query(
+      `
+    UPDATE movies
+    SET
+    title = $2,
+    category = $3,
+    genre = $4,
+    videoID = $5,
+    imageCover = $6,
+    publishedAt = $7,
+    seasons = $8
+    WHERE id = $1
+    RETURNING *
+    `,
+      [id, title, category, genre, videoID, imageCover, publishedAt, seasons]
+    );
+
+    return movie;
   }
 
   delete({ id }) {
