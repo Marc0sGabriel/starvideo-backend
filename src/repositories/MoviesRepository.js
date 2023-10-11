@@ -9,13 +9,15 @@ class MovieRepository {
   }
 
   findByID(id) {
-    const getByID = movies.find((data) => data.id === id);
+    const getByID = db.query(`SELECT * FROM movies WHERE id = $1`, [id]);
 
     return getByID;
   }
 
   findByTitle(title) {
-    const getByTitle = movies.find((data) => data.title === title);
+    const getByTitle = db.query(`SELECT title FROM movies WHERE title = $1`, [
+      title,
+    ]);
 
     return getByTitle;
   }
